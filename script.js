@@ -253,6 +253,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!heroTitleContainer) return;
         
+        // Function to lock scrolling
+        const lockScroll = () => {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        };
+        
+        // Function to unlock scrolling
+        const unlockScroll = () => {
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        };
+        
         // Check if page is being reloaded or returning from another page - if so, show quick fade-in animation
         if (performance.navigation.type === 1 || // 1 = reload
             sessionStorage.getItem('skipAnimation') === 'true') {
@@ -283,6 +295,9 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.removeItem('skipAnimation'); // Clear the flag
             return;
         }
+        
+        // Lock scrolling at the start of the animation
+        lockScroll();
         
         // Stage 1: Salt Hill Digital appears first (0-2s)
         setTimeout(() => {
@@ -339,6 +354,11 @@ document.addEventListener('DOMContentLoaded', function() {
             heroTitleAbove.style.transition = 'opacity 1.5s ease-out';
             heroTitleAbove.style.opacity = '1';
         }, 7000);
+        
+        // Unlock scrolling after animation completes (9.5s)
+        setTimeout(() => {
+            unlockScroll();
+        }, 9500);
     };
     
     // Start hero animation
