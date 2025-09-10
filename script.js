@@ -407,63 +407,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
 
-    // Mobile menu functionality (for future enhancement)
-    const createMobileMenu = () => {
-        const nav = document.querySelector('.nav-container');
-        const navLinks = document.querySelector('.nav-links');
-        
-        // Create mobile menu button
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.innerHTML = '☰';
-        mobileMenuBtn.style.cssText = `
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #2563eb;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        `;
-        
-        nav.appendChild(mobileMenuBtn);
-        
-        // Toggle mobile menu
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('mobile-open');
-            this.innerHTML = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
-        });
-        
-        // Show/hide mobile menu button based on screen size
-        const checkScreenSize = () => {
-            if (window.innerWidth <= 768) {
-                mobileMenuBtn.style.display = 'block';
-                navLinks.style.cssText = `
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
-                    background: rgba(255, 255, 255, 0.95);
-                    backdrop-filter: blur(20px);
-                    flex-direction: column;
-                    padding: 2rem;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                    display: none;
-                    border-radius: 0 0 20px 20px;
-                `;
-            } else {
-                mobileMenuBtn.style.display = 'none';
-                navLinks.style.cssText = '';
-            }
-        };
-        
-        window.addEventListener('resize', checkScreenSize);
-        checkScreenSize();
-    };
-    
-    createMobileMenu();
 
     // Smooth page load animation
     document.body.style.opacity = '0';

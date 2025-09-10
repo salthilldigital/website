@@ -957,37 +957,38 @@ body {
 
 /* Contact Hero Section */
 .contact-hero {
-    min-height: 140vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background-color: #ffffff;
     overflow: hidden;
+    padding: 60px 0 40px 0;
 }
 
 
 .contact-hero-title {
     font-family: 'Baskerville', 'Times New Roman', serif;
-    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     color: #1d1d1f;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
 .contact-hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: #000000;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.5;
     font-weight: 400;
 }
 
 /* Contact Section */
 .contact {
-    padding: 120px 0;
+    padding: 60px 0;
     background-color: #ffffff;
     position: relative;
 }
@@ -997,7 +998,7 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2.5rem;
     align-items: start;
 }
 
@@ -1557,4 +1558,250 @@ textarea:focus {
 /* Smooth transitions for all interactive elements */
 * {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Contact Options Styling */
+.contact-options {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-option {
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-option:last-child {
+    border-bottom: none;
+}
+
+.contact-option-header {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.contact-option-icon {
+    font-size: 1.2rem;
+    color: #6b7280;
+    transition: transform 0.3s ease;
+    min-width: 20px;
+}
+
+.contact-option.active .contact-option-icon {
+    transform: rotate(180deg);
+}
+
+.contact-option-content h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
+}
+
+.contact-option-content p {
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contact-option-form {
+    padding: 0 0 2rem 0;
+    border-top: 1px solid #f3f4f6;
+    margin-top: 1rem;
+    padding-top: 2rem;
+}
+
+.contact-option:hover .contact-option-content h3 {
+    color: #3CA1FF;
+}
+
+.contact-option:hover .contact-option-icon {
+    color: #3CA1FF;
+}
+
+/* Responsive Navigation */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-links-left a,
+    .nav-links-right a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links-left a,
+    .nav-links-right a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 1rem;
+        gap: 1rem;
+    }
+    
+    .nav-links-left a,
+    .nav-links-right a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
+/* Mobile Navigation - Single row layout */
+@media (max-width: 600px) {
+    .nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+    
+    /* Logo left */
+    .logo {
+        font-size: clamp(1rem, 2.5vw, 1.8rem) !important;
+    }
+    
+    /* Projects/Contact right */
+    .nav-links-right {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    /* Hide Mission/Impact/Funders on mobile */
+    .nav-links-left {
+        display: none;
+    }
+    
+    .nav-links-right a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .logo {
+        font-size: clamp(0.8rem, 2vw, 1.4rem) !important;
+    }
+    
+    .nav-links-right {
+        gap: 0.8rem;
+    }
+    
+    .nav-links-right a {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Mobile title adjustments */
+@media (max-width: 600px) {
+    .hero-title-final {
+        white-space: normal !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
+        font-size: clamp(1.8rem, 5.5vw, 3rem) !important;
+    }
+    
+    .hero-title-above {
+        max-width: 95% !important;
+        left: 1rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 3.8vw, 2.2rem) !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-final {
+        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 3.5vw, 2rem) !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* Projects page mobile header and content positioning */
+@media (max-width: 600px) {
+    /* Make projects page mobile header identical to main page */
+    .projects .nav {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        border-bottom: none !important;
+        position: relative !important;
+    }
+    
+    /* Lower the hero content below the header */
+    .projects .contact-hero {
+        padding-top: 120px !important;
+    }
+    
+    .projects .hero-title-above {
+        top: 15% !important;
+    }
+    
+    .projects .hero-gif {
+        top: 25% !important;
+        bottom: 20% !important;
+    }
+    
+    .projects .hero-subtitle-below {
+        top: 85% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Make projects page mobile header identical to main page */
+    .projects .nav {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        border-bottom: none !important;
+        position: relative !important;
+    }
+    
+    /* Lower the hero content below the header */
+    .projects .contact-hero {
+        padding-top: 100px !important;
+    }
+    
+    .projects .hero-title-above {
+        top: 20% !important;
+    }
+    
+    .projects .hero-gif {
+        top: 30% !important;
+        bottom: 25% !important;
+    }
+    
+    .projects .hero-subtitle-below {
+        top: 88% !important;
+    }
 }
