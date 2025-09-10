@@ -1,0 +1,1149 @@
+/* Apple-inspired CSS with seamless scrolling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    gap: 3rem;
+}
+
+.nav-container .logo {
+    flex-shrink: 0;
+}
+
+.nav-container .nav-links-left {
+    flex-shrink: 0;
+}
+
+.nav-container .nav-links-right {
+    margin-left: auto;
+}
+
+.logo span {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #3CA1FF;
+    letter-spacing: -0.02em;
+}
+
+.nav-links-left {
+    display: flex;
+    gap: 2.5rem;
+    margin-left: 5rem;
+}
+
+.nav-links-right {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links-left a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links-right a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.instagram-link {
+    font-size: 1.3rem !important;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-link:hover {
+    opacity: 1;
+    color: #E4405F !important;
+}
+
+.nav-links-left a:hover,
+.nav-links-right a:hover {
+    color: #3CA1FF;
+}
+
+.nav-links-left a::after,
+.nav-links-right a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3CA1FF;
+    transition: width 0.3s ease;
+}
+
+.nav-links-left a:hover::after,
+.nav-links-left a.active::after,
+.nav-links-right a:hover::after,
+.nav-links-right a.active::after {
+    width: 100%;
+}
+
+.nav-links-left a.active,
+.nav-links-right a.active {
+    color: #3CA1FF;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 140vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #6e6e73;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #3CA1FF;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(60, 161, 255, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #2B8CE6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(60, 161, 255, 0.4);
+}
+
+/* Hero Visual Elements */
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.element {
+    position: absolute;
+    background: rgba(60, 161, 255, 0.1);
+    border: 2px solid rgba(60, 161, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #3CA1FF;
+    backdrop-filter: blur(10px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.element.vr {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.element.ar {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.element.ai {
+    top: 40%;
+    left: 70%;
+    animation-delay: 4s;
+}
+
+.element.vr2 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 1s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ar2 {
+    top: 75%;
+    left: 20%;
+    animation-delay: 3s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ai2 {
+    top: 30%;
+    right: 5%;
+    animation-delay: 5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.vr3 {
+    top: 80%;
+    right: 40%;
+    animation-delay: 1.5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ar3 {
+    top: 10%;
+    left: 50%;
+    animation-delay: 3.5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ai3 {
+    top: 65%;
+    left: 5%;
+    animation-delay: 2.5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.vr4 {
+    top: 25%;
+    left: 85%;
+    animation-delay: 4.5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ar4 {
+    top: 85%;
+    left: 60%;
+    animation-delay: 0.5s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ai4 {
+    top: 5%;
+    left: 30%;
+    animation-delay: 3.8s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.vr5 {
+    top: 50%;
+    right: 30%;
+    animation-delay: 2.2s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ar5 {
+    top: 35%;
+    left: 15%;
+    animation-delay: 4.8s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+.element.ai5 {
+    top: 70%;
+    right: 10%;
+    animation-delay: 1.8s;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Mission Section */
+.mission {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.mission-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.mission-text-content {
+    text-align: left;
+}
+
+.mission-text-content h2 {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: -1rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.mission-text-content .mission-text {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.mission-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.mission-text {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    line-height: 1.7;
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.mission-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.highlight {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(248, 250, 252, 0.8);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.highlight:hover {
+    transform: translateY(-8px);
+    background: rgba(248, 250, 252, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-icon {
+    display: none;
+}
+
+.highlight h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.highlight p {
+    color: #6e6e73;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Who We Are Section */
+.who-we-are {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.who-we-are-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.who-we-are-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.who-we-are-intro {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    margin-bottom: 4rem;
+    line-height: 1.6;
+}
+
+.who-we-are-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.who-we-are-item {
+    background: rgba(248, 250, 252, 0.8);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.who-we-are-item:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 250, 252, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.who-we-are-item h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.who-we-are-item p {
+    color: #6e6e73;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Impact Section */
+.impact {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.impact-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.impact-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.impact-intro {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    margin-bottom: 4rem;
+    line-height: 1.6;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.impact-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.impact-item h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.impact-item p {
+    color: #6e6e73;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Our Funders Section */
+.funders {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.funders-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.funders-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.funders-intro {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    margin-bottom: 4rem;
+    line-height: 1.6;
+}
+
+.funders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.funder-item {
+    background: rgba(248, 250, 252, 0.8);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.funder-item:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 250, 252, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.funder-logo h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.funder-item p {
+    color: #6e6e73;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding-top: 80px;
+}
+
+.contact-hero-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.contact-hero-title {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.contact-hero-subtitle {
+    font-size: 1.25rem;
+    color: #6e6e73;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Contact Section */
+.contact {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.contact-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.contact-intro {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.contact-form-container {
+    background: rgba(248, 250, 252, 0.8);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.contact-info {
+    padding: 2rem 0;
+}
+
+.contact-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info-item {
+    background: rgba(248, 250, 252, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 250, 252, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-item h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.contact-info-item p {
+    color: #6e6e73;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 16px 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3CA1FF;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 4px rgba(60, 161, 255, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    background-color: #3CA1FF;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(60, 161, 255, 0.3);
+    align-self: center;
+    min-width: 200px;
+}
+
+.submit-button:hover {
+    background-color: #2B8CE6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(60, 161, 255, 0.4);
+}
+
+/* Footer */
+.footer {
+    background-color: #1d1d1f;
+    color: #f5f5f7;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-brand h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.footer-brand p {
+    color: #a1a1a6;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-section h4 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+    color: #a1a1a6;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    color: #f5f5f7;
+}
+
+.footer-bottom {
+    border-top: 1px solid #424245;
+    padding-top: 2rem;
+    text-align: center;
+    color: #a1a1a6;
+    font-size: 0.9rem;
+}
+
+/* Green Accent Elements */
+.hero-title::after {
+    display: none;
+}
+
+.highlight {
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.highlight:hover {
+    border-top: 3px solid #3CA1FF;
+}
+
+.impact-item {
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.impact-item:hover {
+    border-top: 3px solid #10b981;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero {
+        padding: 0 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .mission-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .mission-text-content {
+        text-align: center;
+    }
+    
+    .mission-text-content h2 {
+        text-align: center;
+    }
+    
+    .mission-text-content .mission-text {
+        text-align: center;
+    }
+    
+    .mission-highlights {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .who-we-are-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .funders-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .contact-form-container {
+        padding: 2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-hero {
+        min-height: 50vh;
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .mission,
+    .who-we-are,
+    .impact,
+    .contact {
+        padding: 80px 0;
+    }
+    
+    .highlight,
+    .who-we-are-item,
+    .impact-item,
+    .funder-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Smooth scroll animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Focus states for accessibility */
+.cta-button:focus,
+.submit-button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #3CA1FF;
+    outline-offset: 2px;
+}
+
+/* Baskerville font for specific headings */
+.mission-content h2,
+.highlight h3,
+.who-we-are-content h2,
+.who-we-are-item h3,
+.impact-content h2,
+.impact-item h3,
+.funders-content h2,
+.funder-logo h3 {
+    font-family: 'Baskerville', 'Times New Roman', serif !important;
+}
+
+/* Projects Section */
+.projects {
+    padding: 120px 0;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.projects-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-item {
+    background: rgba(248, 250, 252, 0.8);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    background: rgba(248, 250, 252, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.project-header h2 {
+    font-family: 'Baskerville', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0;
+}
+
+.project-status {
+    background-color: #10b981;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-description p {
+    font-size: 1.125rem;
+    color: #6e6e73;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.project-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-highlight {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-highlight h4 {
+    font-family: 'Baskerville', 'Times New Roman', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.project-highlight p {
+    color: #6e6e73;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}

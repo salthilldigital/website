@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt Hill Digital - Digital Skills Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav" style="opacity: 0;">
+        <div class="nav-container">
+            <div class="logo" style="text-align: left; font-size: 3.5rem; font-weight: 700;">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span style="color: #10b981; letter-spacing: -0.1em;">SH</span><span style="color: #3CA1FF; letter-spacing: -0.05em;">Digital</span>
+                </a>
+            </div>
+            <div class="nav-links-left">
+                <a href="#mission">Mission</a>
+                <a href="#impact">Impact</a>
+                <a href="#funders">Funders</a>
+            </div>
+            <div class="nav-links-right">
+                <a href="projects.html">Projests</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+        
+        <!-- Stage 2: Initial titles appear -->
+        <div class="hero-initial-logo" id="hero-initial-logo" style="position: absolute; top: 100px; left: 2rem; z-index: 9; opacity: 0;">
+            <h1 style="font-size: 3rem; font-weight: 700; margin: 0;"><span style="color: #10b981;">Salt Hill</span> <span style="color: #3CA1FF;">Digital</span></h1>
+        </div>
+        <div class="hero-title-container" id="hero-title-container" style="position: absolute; top: 180px; left: 2rem; z-index: 9; opacity: 0;">
+            <h1 class="hero-title" style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: 3rem; font-weight: 700; color: #1d1d1f; margin: 0;">Empowering Communities Through Digital Innovation</h1>
+        </div>
+        
+        <!-- Stage 3: GIF background -->
+        <div class="hero-gif" id="hero-gif" style="position: absolute; top: 18%; left: 1%; right: 1%; bottom: 15%; background-image: url('sloughgif.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0; z-index: 1; border-radius: 15px; background-color: #ffffff;"></div>
+        
+        <!-- Stage 4: Final layout -->
+        <!-- Title above GIF -->
+        <div class="hero-title-above" id="hero-title-above" style="position: absolute; top: 10%; left: 2rem; z-index: 2; text-align: left; max-width: 90%; opacity: 0;">
+            <h1 class="hero-title-final" style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: 3.2rem; font-weight: 700; margin: 0; white-space: nowrap; background: url('sloughgif.gif'); background-size: cover; background-position: center; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">Empowering Communities Through Digital Innovation</h1>
+        </div>
+        
+        <!-- Subtitle below GIF -->
+        <div class="hero-subtitle-below" id="hero-subtitle-below" style="position: absolute; top: 90%; left: 2rem; z-index: 2; text-align: left; max-width: 90%; opacity: 0;">
+            <p class="hero-subtitle" style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: 2.8rem; color: #000000; line-height: 1.3; font-weight: 400; margin: 0; white-space: pre-line;">Accessible digital skills training using VR, AR, and AI technologies to bridge
+the digital divide in Slough and surrounding areas.</p>
+        </div>
+        
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-layout">
+                    <div class="mission-text-content">
+                        <h2>Our Mission</h2>
+                        <p class="mission-text">Salt Hill Digital provides accessible and engaging digital skills training using emerging technologies such as Virtual Reality (VR), Augmented Reality (AR), and Artificial Intelligence (AI). We deliver hands-on workshops, community events, and immersive training programs aimed at increasing digital literacy, confidence, and career readiness among underrepresented communities in Slough and the surrounding areas.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="digitalimage.png" alt="Digital skills training and community empowerment" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px;">
+                    </div>
+                </div>
+                
+                <div class="mission-highlights">
+                    <div class="highlight">
+                        <div class="highlight-icon">🎯</div>
+                        <h3>Hands-on Learning</h3>
+                        <p>Interactive workshops with practical applications</p>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">🌐</div>
+                        <h3>Community Focus</h3>
+                        <p>Bringing people together through technology</p>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">🚀</div>
+                        <h3>Future Ready</h3>
+                        <p>Building skills for the digital economy</p>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-icon">🤝</div>
+                        <h3>Digital Inclusion</h3>
+                        <p>Ensuring everyone has access to digital opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="impact-content">
+                <h2>Who We Serve</h2>
+                <p class="impact-intro">We're committed to empowering underrepresented communities and closing the digital divide.</p>
+                
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <h3>Young People</h3>
+                        <p>Building digital confidence and skills for the future workforce</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Job Seekers</h3>
+                        <p>Enhancing employability with modern tech skills and certifications</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Disadvantaged Communities</h3>
+                        <p>Providing equal access to digital opportunities and resources</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Digitally Excluded</h3>
+                        <p>Bridging the gap in digital literacy and technology access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Funders Section -->
+    <section id="funders" class="funders">
+        <div class="container">
+            <div class="funders-content">
+                <h2>Our Funders</h2>
+                <p class="funders-intro">We're grateful for the support of our funding partners who make our mission possible.</p>
+                
+                <div class="funders-grid">
+                    <div class="funder-item" style="max-width: 300px; margin: 0 auto; padding: 1.5rem; background-color: #ffffff;">
+                        <a href="https://www.slough.gov.uk/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block;">
+                            <div class="funder-logo">
+                                <img src="slough-borough-council-logo.jpg" alt="Slough Borough Council" style="max-width: 180px; height: auto;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Salt Hill Digital</h3>
+                    <p>Bridging the digital divide in Slough and beyond through accessible technology education.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>VR Training</li>
+                            <li>AR Workshops</li>
+                            <li>AI Education</li>
+                            <li>Community Events</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li>Young People</li>
+                            <li>Job Seekers</li>
+                            <li>Digital Inclusion</li>
+                            <li>Career Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Salt Hill Digital. Empowering communities through digital innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

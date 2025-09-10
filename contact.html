@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Salt Hill Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="main-nav" style="opacity: 1;">
+        <div class="nav-container">
+            <div class="logo" style="text-align: left; font-size: 3.5rem; font-weight: 700;">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span style="color: #10b981; letter-spacing: -0.1em;">SH</span><span style="color: #3CA1FF; letter-spacing: -0.05em;">Digital</span>
+                </a>
+            </div>
+            <div class="nav-links-left">
+                <a href="index.html#mission">Mission</a>
+                <a href="index.html#impact">Impact</a>
+                <a href="index.html#funders">Funders</a>
+            </div>
+            <div class="nav-links-right">
+                <a href="projects.html">Projects</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title">Start Your Digital Journey</h1>
+                <p class="contact-hero-subtitle">Ready to transform your future with digital skills? Get in touch with us today and let's build your digital future together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <input type="text" name="user_name" placeholder="Your Name" required>
+                            <input type="email" name="user_email" placeholder="Your Email" required>
+                        </div>
+                        <select name="interest" required>
+                            <option value="">I'm interested in...</option>
+                            <option value="workshops">Hands-on Workshops</option>
+                            <option value="events">Community Events</option>
+                            <option value="training">Immersive Training Programs</option>
+                            <option value="partnership">Partnership Opportunities</option>
+                        </select>
+                        <textarea name="message" placeholder="Tell us about your goals and how we can help you succeed" rows="4"></textarea>
+                        
+                        <!-- EmailJS will handle the email sending -->
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-info-grid">
+                        <div class="contact-info-item">
+                            <h3>Get in Touch</h3>
+                            <p>Ready to start your digital journey? We're here to help you succeed.</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h3>Our Location</h3>
+                            <p>Slough and surrounding areas<br>United Kingdom</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h3>Response Time</h3>
+                            <p>We typically respond within 24 hours during business days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Salt Hill Digital</h3>
+                    <p>Bridging the digital divide in Slough and beyond through accessible technology education.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>VR Training</li>
+                            <li>AR Workshops</li>
+                            <li>AI Education</li>
+                            <li>Community Events</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li>Young People</li>
+                            <li>Job Seekers</li>
+                            <li>Digital Inclusion</li>
+                            <li>Career Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Salt Hill Digital. Empowering communities through digital innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set flag to skip animation when returning to home page
+        sessionStorage.setItem('skipAnimation', 'true');
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
