@@ -1760,7 +1760,7 @@ textarea:focus {
     }
     
     /* Lower the hero content below the header */
-    .projects .contact-hero {
+    .projects .hero {
         padding-top: 120px !important;
     }
     
@@ -1776,6 +1776,11 @@ textarea:focus {
     .projects .hero-subtitle-below {
         top: 85% !important;
     }
+    
+    /* Make Our Projects title HUGE on mobile */
+    .projects .hero-title-final {
+        font-size: clamp(3rem, 12vw, 12rem) !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1788,7 +1793,7 @@ textarea:focus {
     }
     
     /* Lower the hero content below the header */
-    .projects .contact-hero {
+    .projects .hero {
         padding-top: 100px !important;
     }
     
@@ -1803,5 +1808,10 @@ textarea:focus {
     
     .projects .hero-subtitle-below {
         top: 88% !important;
+    }
+    
+    /* Make Our Projects title MASSIVE on smaller mobile */
+    .projects .hero-title-final {
+        font-size: clamp(3.5rem, 15vw, 15rem) !important;
     }
 }
