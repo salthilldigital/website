@@ -1560,6 +1560,86 @@ textarea:focus {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Phone CTA and Call Card */
+.footer-call {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.phone-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.35);
+}
+
+.phone-cta:hover {
+    background-color: #0ea371;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
+}
+
+.phone-cta .icon {
+    font-size: 1.1rem;
+}
+
+.call-banner {
+    background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+    color: #ffffff;
+    padding: 32px 0;
+    margin-top: 40px;
+}
+
+.call-banner .call-banner-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.call-banner h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.call-banner .phone-cta {
+    background-color: #111827;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.call-banner .phone-cta:hover {
+    background-color: #0b1220;
+}
+
+.call-card {
+    background: rgba(248, 250, 252, 0.95);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.call-card h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.call-card p {
+    color: #6e6e73;
+    margin-bottom: 1.25rem;
+}
+
 /* Contact Options Styling */
 .contact-options {
     max-width: 800px;
